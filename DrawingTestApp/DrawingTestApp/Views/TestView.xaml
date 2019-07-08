@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<forms:ZXingScannerPage
+    x:Class="DrawingTestApp.Views.TestView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customui="clr-namespace:DrawingTestApp.CustomUI"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <forms:ZXingScannerPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label Text="Test" />
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <forms:ZXingScannerView
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    AutomationId="zxingScannerView"
+                    HorizontalOptions="FillAndExpand"
+                    IsAnalyzing="{Binding isAnalyzing}"
+                    IsScanning="{Binding isScanning}"
+                    ScanResultCommand="{Binding resultCommand}"
+                    VerticalOptions="FillAndExpand" />
+
+                <customui:CustomContentView
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Frame
+                            x:Name="clearFrame"
+                            Padding="0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#FE6A00"
+                            CornerRadius="10"
+                            HeightRequest="295"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="295" />
+                    </StackLayout>
+
+                </customui:CustomContentView>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="40,17,40,0"
+                    FontSize="Small"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Scannen Sie den QR-Code Ihrer Maschine"
+                    TextColor="DarkGray"
+                    VerticalOptions="Start" />
+            </Grid>
+        </StackLayout>
+    </forms:ZXingScannerPage.Content>
+</forms:ZXingScannerPage>
